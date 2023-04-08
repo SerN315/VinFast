@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>    <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="Login.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <header>
+      <div class="sidebar">
+        <div class="logo_content">
+          <div class="logo">
+            <img src="Logononame.png" width='50px' alt="logo">
+            <div class="logo_name"><img src="logoname.png" width="100px"></div>
+          </div>
+          <i class='bx bx-menu' id="mbtn" ></i>
+        </div>
+        <ul class="navlist">
+          <li>
+            <a href="index.html">
+              <i class='bx bxs-home'></i>
+              <span class="links_name">Trang chủ</span>
+            </a>
+            <span class="tooltip">Trang chủ</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bxs-car'></i>
+              <span class="Car">Oto</span>
+            </a>
+            <span class="tooltip">Oto</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-cycling'></i>
+              <span class="Bike">Xe máy</span>
+            </a>
+            <span class="tooltip">Xe máy</span>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bxs-car-mechanic' ></i>
+              <span class="links_name">Dịch vụ</span>
+            </a>
+            <span class="tooltip">Dịch vụ</span>
+          </li>
+            <li>
+              <a href="index-news.html">
+                <i class='bx bx-news'></i>
+                <span class="links_name">Tin tức</span>
+              </a>
+              <span class="tooltip">Tin tức</span>
+              </li>
+              <li>
+                <a href="about-us-index.html">
+                  <i class='bx bxs-user-detail'></i>
+                  <span class="links_name">Về chúng tôi</span>
+                </a>
+                <span class="tooltip">Về chúng tôi</span>
+              </li>
+              <li>
+                <a href="TheChads.html">
+                  <i class='bx bxs-user-detail'></i>
+                  <span class="links_name">TheChads</span>
+                </a>
+                <span class="tooltip">TheChads</span>
+              </li>
+        </ul>
+        <div class="pro5-content">
+          <div class="pro5">
+            <div class="pro5-details">
+              <i class='bx bx-user-circle'></i>
+              <div class="Username">Guest1234</div>
+            </div>
+            <a href="Login.html">
+            <i class='bx bx-log-in' id='login'></i>
+            </a>
+        </div>
+      </div>
+      <script src="sidebar.js"></script>
+    </header>
+    <body>
+    <div class="wrapper">
+      <div class="form-box login">
+        <h2>Đăng nhập</h2>
+        <form action="#">
+          <div class="input-box">
+            <span class="icon"></span>
+            <input type="email" id="email" required >
+            <label>Email</label>
+          </div>
+          <div class="input-box">
+            <span class="icon"></span>
+            <input type="password" id="password" required>
+            <label>Password</label>
+          </div>
+          <div class="remember-forgot">
+            <label><input type="checkbox">Ghi nhớ tài khoản</label>
+            <a href="#">Quên mật khẩu</a>
+          </div>
+          <button id="login" class="btnDn">Đăng nhập</button>
+          <div class="login-register">
+            <p>Chưa có tài khoản?<a href='#' class="register-link">Đăng kí</a></p>
+          </div>
+        </form>
+      </div>
+      <div class="form-box register">
+        <h2>Đăng kí</h2>
+        <form action="#">
+          <div class="input-box">
+            <span class="icon"></span>
+            <input type="text" required id="dkusername">
+            <label>Username</label>
+          </div>
+          <div class="input-box">
+            <span class="icon"></span>
+            <input type="email" required id="dkemail">
+            <label>Email</label>
+          </div>
+          <div class="input-box">
+            <span class="icon"></span>
+            <input type="Password" required id="dkpassword">
+            <label>Password</label>
+          </div>
+          <div class="remember-forgot">
+            <label><input type="checkbox">Tôi đồng ý với điều khoản</label>
+          </div>
+          <button type="Submit" id="register" class="btnDk">Đăng kí</button>
+          <div class="login-register">
+            <p>Đã có tài khoản?<a href='#' class="login-link">Đăng nhập</a></p>
+          </div>
+          </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+  
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      signOut,
+    } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAYdAd0Idbd6AHJtQBdRkJmbjvJjEf869U",
+      authDomain: "thechads-6339d.firebaseapp.com",
+      databaseURL: "https://thechads-6339d-default-rtdb.firebaseio.com",
+      projectId: "thechads-6339d",
+      storageBucket: "thechads-6339d.appspot.com",
+      messagingSenderId: "326519793136",
+      appId: "1:326519793136:web:f3cc750a8e936ad4bc6935",
+      measurementId: "G-CPRZ0XWPGD"
+  };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+    console.log(app);
+
+    //----- New Registration code start
+    document.getElementById("register").addEventListener("click", function () {
+      var email = document.getElementById("dkemail").value;
+      var password = document.getElementById("dkpassword").value;
+      //For new registration
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+          alert("Đăng ký thành công!");
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // ..
+          console.log(errorMessage);
+          alert(error);
+        });
+    });
+
+    //----- Login code start
+    document.getElementById("login").addEventListener("click", function () {
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+          alert(user.email + "Đăng nhập thành công!");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorMessage);
+          alert("Wrong password!");
+        });
+    });
+    //----- End
+  </script>
+</html>

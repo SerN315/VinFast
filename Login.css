@@ -1,0 +1,348 @@
+
+body {
+display:flex;
+justify-content: center;
+align-items: center;
+font-family: "Poppins", sans-serif;
+background:url('background1.jpg') no-repeat;
+background-size:cover;
+background-position: center;
+min-height: 100vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+header{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow:hidden;
+}
+.sidebar{
+    position: fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:85px;
+    background: rgba(0, 0, 0, 0.875);
+    padding:6px 14px;
+    transition: all 0.5s ease;
+}
+.sidebar.active{
+    width:300px;
+}
+
+.sidebar.active .logo_content .logo{
+    opacity:1;
+    pointer-events: none;
+}
+.sidebar .logo_content .logo{
+    color:#fff;
+    display:flex;
+    height:50px;
+    width:100%;
+    align-items: center;
+    opacity:0;
+    pointer-events: none;
+}
+.logo_content .logo{
+    margin-right:10px;
+    margin-bottom:80px;
+}
+.logo_content .logo .logo_name{
+    position: absolute;
+    top:2vh;
+    left:35%;
+  height:50px;
+  width:0;
+  filter: invert(100);
+ 
+}
+.sidebar #mbtn{
+    position: absolute;
+    color:#fff;
+    left:50%;
+    top:6px;
+    font-size: 20px;
+    height:50px;
+    width:50px;
+    text-align: center;
+    line-height: 50px;
+    transform:translateX(-50%);
+}
+.sidebar.active #mbtn{
+    left:90%;
+}
+.siderbar ul{
+    margin-top:20px;
+}
+.sidebar ul li{
+    position: relative;
+    height:50px;
+    width:100%;
+    margin:20px 0px;
+    list-style: none;
+    line-height: 60px;
+    border-radius: 10px ;
+    font-size: 1.2em;
+}
+.sidebar ul li .tooltip{
+    position: absolute;
+    height:40px;
+    width: 150px;
+    left:90px;
+    top:0%;
+    background: antiquewhite;
+    transform: translateY(-50%);
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    line-height:40px;
+    transition: 0s;
+    opacity:0;
+    pointer-events: none;
+  
+}
+.sidebar ul li:hover .tooltip{
+top:50%;
+transition: all .5s ease;
+opacity:1;
+}
+.sidebar.active ul li .tooltip{
+    display:none;
+}
+.sidebar ul li a{
+    color:#fff;
+    display:flex;
+    align-items: center;
+    text-decoration: none;
+    transition:all 0.3s ease;
+    border-radius: 12px ;
+    white-space: nowrap;
+
+}
+.sidebar ul li a:hover{
+    background: skyblue;
+    color:antiquewhite;
+
+}
+.sidebar ul li i{
+    margin-left: 20px;
+    margin-right: 10px;
+    height:50px;
+    min-height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+}
+.sidebar.active .links_name{
+    opacity:1;
+    pointer-events: auto;
+}
+.sidebar .links_name{
+    opacity:0;
+    pointer-events: none;
+}
+.sidebar .pro5-content{
+    position: absolute;
+    color:#fff;
+    bottom:0;
+    left:0;
+    width:100%;
+}
+.sidebar .pro5-content .pro5{
+    position: relative;
+    padding:10px 6px;
+    height:60px;
+    background: none;
+    transition: all .4s ease;
+}
+.sidebar.active .pro5-content .pro5{
+    background: grey;
+}
+.pro5-content .pro5 .pro5-details{
+    display:flex;
+    align-items: center;
+    opacity:0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.sidebar.active .pro5 .pro5-details{
+    opacity:1;
+    pointer-events: auto;
+}
+.pro5 .pro5-details i { 
+    height:20px;
+    width:20px;
+    margin-left: 10px;
+    min-height: 50px;
+    font-size: 2.5em;
+}
+
+.pro5 .pro5-details .Username{
+    margin-left:40px;
+    font-size:15px;
+    font-weight: 400;
+    margin-bottom: 10px;
+
+
+}
+.pro5 #login{
+    position: absolute;
+    left:50%;
+    bottom:5px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 1.7em;
+    border-radius: 12px;
+    text-align: center;
+}
+.sidebar.active #login{
+    left:90%
+}
+
+
+.wrapper{
+  position:absolute;
+  width:400px;
+  height:440px;
+  background: transparent;
+  border:2px solid rgba(255,255,255,5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0,0,0,.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow:hidden;
+ transition: height .2s ease;
+}
+.wrapper.active{
+  height: 520px;
+}
+.wrapper.form-box{
+  width:100%;
+  padding:40px;
+}
+.wrapper .form-box.login{
+  transition: transform .18s ease;
+  transform:translateX(0)
+}
+.wrapper.active .form-box.login{
+  transition: none;
+  transform: translateX(-400px);
+
+}
+.wrapper .form-box.register{
+  position:absolute;
+  transition: none;
+  transform:translateX(400px);
+}
+.wrapper.active .form-box.register{
+  transition: transform .18s ease;
+  transform:translateX(0)
+}
+.form-box h2{
+  font-size: 2em;
+  color:antiquewhite;
+  text-align: center;
+}
+.input-box{
+  position: relative;
+  width:100%;
+  height:50px;
+  border-bottom:2px solid antiquewhite;
+  margin:30px 0;
+
+}
+.input-box label{
+  position:absolute;
+  top:50%;
+  left:5px;
+  transform:translateY(-50%);
+  font-size:1em;
+  color:antiquewhite;
+  font-weight: 500;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+top:-5px;
+}
+.input-box input{
+  width:100%;
+  height:100%;
+  background: transparent;
+  border:none;
+  outline: none;
+  font-size: 1em;
+  color:antiquewhite;
+  font-weight:600;
+  padding:0 35px 0 5px;
+
+}
+.input-box.icon{
+  position: absolute;
+  right:8px;
+  font-size:1.2em;
+}
+.remember-forgot{
+  font-size:.9em;
+  color:antiquewhite;
+  font-weight: 400;
+  margin:-15px 0 15px;
+  display:flex;
+  justify-content:space-between;
+}
+.remember-forgot label input {
+  accent-color:#162938;
+  margin-right:3px;
+}
+.remember-forgot a{
+  color:antiquewhite;
+  text-decoration: none;
+}
+.remember-forgot a:hover{
+  text-decoration: underline;
+}
+.btnDk{
+  width:100%;
+  height:45px;
+  background:antiquewhite;
+  border:none;
+  outline:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-size: 1em;
+}
+.btnDn{
+  width:100%;
+  height:45px;
+  background:antiquewhite;
+  border:none;
+  outline:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-size: 1em;
+}
+.login-register{
+  font-size:.9em;
+  color:antiquewhite;
+  text-align: center;
+  font-weight: 500;
+  margin:25px 0 10px;
+}
+.login-register p a{
+  color:antiquewhite;
+  text-decoration: none;
+  font-weight: 600;
+}
+.login-register p a:hover{
+  text-decoration:underline ;
+}
+
