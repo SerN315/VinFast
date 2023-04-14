@@ -1,0 +1,629 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins",sans-serif;
+}
+.sidebar{
+  position: fixed;
+  top:0;
+  left:0;
+  height:100%;
+  width:85px;
+  background: rgba(0, 0, 0, 0.875);
+  padding:6px 14px;
+  transition: all 0.5s ease;
+}
+.sidebar.active{
+  width:300px;
+}
+
+.sidebar.active .logo_content .logo{
+  opacity:1;
+  pointer-events: none;
+}
+.sidebar .logo_content .logo{
+  color:#fff;
+  display:flex;
+  height:50px;
+  width:100%;
+  align-items: center;
+  opacity:0;
+  pointer-events: none;
+}
+.logo_content .logo{
+  margin-right:10px;
+  margin-bottom:80px;
+}
+.logo_content .logo .logo_name{
+  position: absolute;
+  top:2vh;
+  left:35%;
+height:50px;
+width:0;
+filter: invert(100);
+
+}
+.sidebar #mbtn{
+  position: absolute;
+  color:#fff;
+  left:50%;
+  top:6px;
+  font-size: 20px;
+  height:50px;
+  width:50px;
+  text-align: center;
+  line-height: 50px;
+  transform:translateX(-50%);
+}
+.sidebar.active #mbtn{
+  left:90%;
+}
+.siderbar ul{
+  margin-top:20px;
+}
+.sidebar ul li{
+  position: relative;
+  height:50px;
+  width:100%;
+  margin:20px 0px;
+  list-style: none;
+  line-height: 60px;
+  border-radius: 10px ;
+  font-size: 1.2em;
+}
+.sidebar ul li .tooltip{
+  position: absolute;
+  height:40px;
+  width: 150px;
+  left:90px;
+  top:0%;
+  background: antiquewhite;
+  transform: translateY(-50%);
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  line-height:40px;
+  transition: 0s;
+  opacity:0;
+  pointer-events: none;
+
+}
+.sidebar ul li:hover .tooltip{
+top:50%;
+transition: all .5s ease;
+opacity:1;
+}
+.sidebar.active ul li .tooltip{
+  display:none;
+}
+.sidebar ul li a{
+  color:#fff;
+  display:flex;
+  align-items: center;
+  text-decoration: none;
+  transition:all 0.3s ease;
+  border-radius: 12px ;
+  white-space: nowrap;
+
+}
+.sidebar ul li a:hover{
+  background: skyblue;
+  color:antiquewhite;
+
+}
+.sidebar ul li i{
+  margin-left: 20px;
+  margin-right: 10px;
+  height:50px;
+  min-height: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+}
+.sidebar.active .links_name{
+  opacity:1;
+  pointer-events: auto;
+}
+.sidebar .links_name{
+  opacity:0;
+  pointer-events: none;
+}
+.sidebar .pro5-content{
+  position: absolute;
+  color:#fff;
+  bottom:0;
+  left:0;
+  width:100%;
+}
+.sidebar .pro5-content .pro5{
+  position: relative;
+  padding:10px 6px;
+  height:60px;
+  background: none;
+  transition: all .4s ease;
+}
+.sidebar.active .pro5-content .pro5{
+  background: grey;
+}
+.pro5-content .pro5 .pro5-details{
+  display:flex;
+  align-items: center;
+  opacity:0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.sidebar.active .pro5 .pro5-details{
+  opacity:1;
+  pointer-events: auto;
+}
+.pro5 .pro5-details i { 
+  height:20px;
+  width:20px;
+  margin-left: 10px;
+  min-height: 50px;
+  font-size: 2.5em;
+}
+
+.pro5 .pro5-details .Username{
+  margin-left:40px;
+  font-size:15px;
+  font-weight: 400;
+  margin-bottom: 10px;
+
+
+}
+.pro5 #login{
+  position: absolute;
+  left:50%;
+  bottom:5px;
+  transform: translateX(-50%);
+  min-width: 50px;
+  line-height: 50px;
+  font-size: 1.7em;
+  border-radius: 12px;
+  text-align: center;
+}
+.sidebar.active #login{
+  left:90%
+}
+#ChadsLogo{
+position:absolute;
+left:15vh;
+top:10vh;
+z-index: -2;
+}
+#chad{
+position:absolute;
+left:25vw;
+top:30vh;
+z-index: -1;
+}
+#quote{
+width:15em;
+border:1px;
+word-wrap: break-word;
+position:absolute;
+left:35vh;
+top:72vh;
+font-size:30px;
+color: antiquewhite;
+text-align:center;
+z-index: -1;
+font-weight: bold;
+}
+.chad1{
+position: absolute;
+top:0;
+right:8vw;
+width: 120px; 
+height: 100Vh; 
+text-align:center;
+z-index: 1;
+
+}
+.chad1 img{
+height:100%;
+width:100%;
+object-fit: cover;
+object-position: 45% ; 
+transition: all .5 ease;
+}
+.text{
+position:absolute;
+bottom:10vh;
+color:antiquewhite;
+border:1px;
+word-wrap: break-word;
+font-family: 'Shadows Into Light', cursive;
+font-size: 1.5em;
+display: none;
+}
+.text2{
+position:absolute;
+bottom:10vh;
+color:antiquewhite;
+border:1px;
+word-wrap: break-word;
+font-family: 'Shadows Into Light', cursive;
+font-size: 1.5em;
+display: none;
+}
+.text3{
+position:absolute;
+bottom:10vh;
+color:antiquewhite;
+border:1px;
+word-wrap: break-word;
+font-family: 'Shadows Into Light', cursive;
+font-size: 1.5em;
+display: none;
+}
+.chad2{
+position: absolute;
+top:0;
+right:25vw;
+width: 120px; 
+height: 100Vh; 
+text-align: center;
+}
+.chad2 img{
+height:100%;
+width:100%;
+object-fit: cover;
+object-position: 50% 50%; 
+}
+.chad3{
+position: absolute;
+top:0;
+right:16.5vw;
+width: 120px; 
+height: 100Vh; 
+text-align: center;
+}
+.chad3 img{
+height:100%;
+width:100%;
+object-fit: cover;
+object-position: 65% 50%; 
+}
+.chad1:hover{
+position: absolute;
+top:0;
+right:8vw;
+width: 700px; 
+height: 100Vh; 
+text-align: center;
+}
+.chad2:hover{
+position: absolute;
+top:0;
+right:24.5vw;
+width: 700px; 
+height: 100Vh; 
+text-align: center;
+}
+.chad3:hover{
+position: absolute;
+top:0;
+right:16.5vw;
+width: 700px; 
+height: 100Vh; 
+text-align: center;
+}
+#hbh{
+  display:flex;
+  position:absolute;
+  top:0;
+  right:0;
+  border-bottom: 100vh solid #272727;
+  border-left: 600px solid transparent;
+  border-right: 0px solid transparent;
+  height:100vh;
+  width: 100%;
+  z-index: -1;
+}
+.chad1:hover .text{
+  position:absolute ;
+  left: 120px;
+  top:90vh;
+  display: initial;
+}
+.chad2:hover .text2{
+  position:absolute ;
+  left: 120px;
+  top:90vh;
+  display: initial;
+}
+
+.chad3:hover .text3{
+  position:absolute ;
+  left: 120px;
+  top:90vh;
+  display: initial;
+}
+@media only screen and (max-width: 412px) {
+
+#ChadsLogo{
+  position:fixed;
+  left:150px;
+  top:70px;
+  z-index: -2;
+  height:130px;
+  width:110px;
+}
+#chad{
+  position:fixed;
+  left:160px;
+  top:300px;
+  z-index: -1;
+  width:200px;
+  height: 200px;
+}
+#quote{
+  width:15em;
+  border:1px;
+  word-wrap: break-word;
+  position:fixed;
+  left: 150px;
+  top:500px;
+  font-size:15px;
+  color:cadetblue;
+  text-align:center;
+  z-index: -1;
+  font-weight: bold;
+  outline:2px #272727;
+}
+.chad1{
+position: absolute;
+top:600px;
+right:10px;
+width: 100px; 
+height: 300px; 
+text-align:center;
+z-index: 1;
+pointer-events: none;
+
+}
+.chad1 img{
+height:100%;
+width:100%;
+border-radius: 12px;
+}
+.chad2{
+  position: absolute;
+  top:600px;
+  left:85px;
+  width: 100px; 
+  height: 300px; 
+  text-align:center;
+  pointer-events: none;
+  z-index: -1;
+  
+}
+.chad2 img{
+  height:100%;
+  width:100%;
+  border-radius: 12px;
+}
+.chad3{
+position: absolute;
+top:600px;
+right:120px;
+width: 100px; 
+height: 300px; 
+text-align:center;
+text-align: center;
+pointer-events: none;
+}
+.chad3 img{
+  height:100%;
+  width:100%;
+  border-radius: 12px;
+
+}
+  #hbh{
+    display:flex;
+    position:fixed;
+    top:0;
+    right:0;
+    border-bottom: 2000px solid #272727;
+    border-left: 900px solid transparent;
+    border-right: 0px solid transparent;
+    height:100%;
+    width: 100%;
+    z-index: -1;
+  }
+
+
+}
+@media only screen and (max-width: 412px) {
+
+  #ChadsLogo{
+     position:fixed;
+     left:150px;
+     top:70px;
+     z-index: -2;
+     height:130px;
+     width:110px;
+   }
+   #chad{
+     position:fixed;
+     left:160px;
+     top:300px;
+     z-index: -1;
+     width:200px;
+     height: 200px;
+   }
+   #quote{
+     width:15em;
+     border:1px;
+     word-wrap: break-word;
+     position:fixed;
+     left: 150px;
+     top:500px;
+     font-size:15px;
+     color:cadetblue;
+     text-align:center;
+     z-index: -1;
+     font-weight: bold;
+     outline:2px #272727;
+   }
+   .chad1{
+   position: absolute;
+   top:600px;
+   right:10px;
+   width: 100px; 
+   height: 300px; 
+   text-align:center;
+   z-index: 1;
+   pointer-events: none;
+ 
+   }
+   .chad1 img{
+   height:100%;
+   width:100%;
+   border-radius: 12px;
+   }
+   .chad2{
+     position: absolute;
+     top:600px;
+     left: 80px;
+     width: 100px; 
+     height: 300px; 
+     text-align:center;
+     pointer-events: none;
+     z-index: -1;
+     
+   }
+   .chad2 img{
+     height:100%;
+     width:100%;
+     border-radius: 12px;
+   }
+   .chad3{
+   position: absolute;
+   top:600px;
+   right:120px;
+   width: 100px; 
+   height: 300px; 
+   text-align:center;
+   text-align: center;
+   pointer-events: none;
+   }
+   .chad3 img{
+     height:100%;
+     width:100%;
+     border-radius: 12px;
+ 
+   }
+     #hbh{
+       display:flex;
+       position:fixed;
+       top:0;
+       right:0;
+       border-bottom: 2000px solid #272727;
+       border-left: 900px solid transparent;
+       border-right: 0px solid transparent;
+       height:100%;
+       width: 100%;
+       z-index: -1;
+     }
+   
+ 
+   }
+   @media only screen and (min-width:413 )and( max-width: 1000px) {
+
+    #ChadsLogo{
+       position:fixed;
+       left:150px;
+       top:70px;
+       z-index: -2;
+       height:130px;
+       width:110px;
+     }
+     #chad{
+       position:fixed;
+       left:160px;
+       top:300px;
+       z-index: -1;
+       width:200px;
+       height: 200px;
+     }
+     #quote{
+       width:15em;
+       border:1px;
+       word-wrap: break-word;
+       position:fixed;
+       left: 150px;
+       top:500px;
+       font-size:15px;
+       color:cadetblue;
+       text-align:center;
+       z-index: -1;
+       font-weight: bold;
+       outline:2px #272727;
+     }
+     .chad1{
+     position: absolute;
+     top:600px;
+     right:10px;
+     width: 100px; 
+     height: 300px; 
+     text-align:center;
+     z-index: 1;
+     pointer-events: none;
+   
+     }
+     .chad1 img{
+     height:100%;
+     width:100%;
+     border-radius: 12px;
+     }
+     .chad2{
+       position: absolute;
+       top:600px;
+       left:85px;
+       width: 100px; 
+       height: 300px; 
+       text-align:center;
+       pointer-events: none;
+       z-index: -1;
+       
+     }
+     .chad2 img{
+       height:100%;
+       width:100%;
+       border-radius: 12px;
+     }
+     .chad3{
+     position: absolute;
+     top:600px;
+     right:120px;
+     width: 100px; 
+     height: 300px; 
+     text-align:center;
+     text-align: center;
+     pointer-events: none;
+     }
+     .chad3 img{
+       height:100%;
+       width:100%;
+       border-radius: 12px;
+   
+     }
+       #hbh{
+         display:flex;
+         position:fixed;
+         top:0;
+         right:0;
+         border-bottom: 2000px solid #272727;
+         border-left: 900px solid transparent;
+         border-right: 0px solid transparent;
+         height:100%;
+         width: 100%;
+         z-index: -1;
+       }
+     
+   
+     }
